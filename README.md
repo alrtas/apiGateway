@@ -52,7 +52,9 @@ Proposta de criação de um middleware que faça a interface entre os microservi
 ## Outra ideia de solução
 ![](https://github.com/alrtas/apiGateway/blob/master/Utils/Imagens/wso2_enterprise_integrator.PNG)
 
-<br>
-<br>
-Outra alternativa é utilizar o [WSO2](https://wso2.com/integration/) como API Manager/gateway e integrador entre diferentes soluções, neste casos as integrações serão feitas somente com base de dados, e disponibilizadas e consumidas via layer implementado pelo API manager. Aumentando a velocidade e agilidade no desenvolvimento de futuras integrações.
+
+Outra alternativa é utilizar o [WSO2](https://wso2.com/integration/) como API Manager/gateway e integrador entre diferentes soluções ou [ESB](https://wso2.com/products/enterprise-service-bus/), neste casos as integrações serão feitas somente com base de dados, e disponibilizadas e consumidas via layer implementado pelo API manager. Aumentando a velocidade e agilidade no desenvolvimento de futuras integrações, sem necessidade de criar arquitetura, sem codigo, somente focando em entregar valor para o negócio.
+
+Segue abaixo um video da plataforma WSO2.
+[LINK](https://www.youtube.com/watch?v=hs_FLM5a6Ck&list=PLp0TUr0bmhX6PMqphqe6dJiap3B5KpLyi&ab_channel=WSO2)
  
