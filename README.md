@@ -9,8 +9,8 @@ segurança em TI. Afinal, nosso principal ativo são dados sensíveis dos consum
 
 * [Solução/arquitetura proposta](https://github.com/alrtas/apiGateway/blob/master/README.md#solu%C3%A7%C3%A3oarquitetura-proposta)
 * [Tecnologias propostas](https://github.com/alrtas/apiGateway#tecnologias-propostas)
-* [Endpoints & Payloads de entrada]
-* [Endpoints & Payloads de saida]
+* [Endpoints & Payloads de entrada (POST)](https://github.com/alrtas/apiGateway#endpoints--payloads-de-entrada)
+* [Endpoints & Payloads de saida (GET)](https://github.com/alrtas/apiGateway#endpoints--payloads-de-saida)
 * [Um pouco da lógica]()
 * [Outra ideia de solução](https://github.com/alrtas/apiGateway#outra-ideia-de-solu%C3%A7%C3%A3o)
 
@@ -51,6 +51,7 @@ Proposta de criação de um middleware que faça a interface entre os microservi
 
 * URI: `api.tenant.com/cadastro/geral`
  * Authorization : `your token`
+ * Content-type : `application/json`
  * Verbo: `POST`
  * Payload da requisição : [disponivel aqui]()
  
@@ -58,6 +59,7 @@ Proposta de criação de um middleware que faça a interface entre os microservi
 
 * URI: `api.tenant.com/cadastro/financeiro`
  * Authorization : `your token`
+ * Content-type : `application/json`
  * Verbo: `POST`
  * Payload da requisição : [disponivel aqui]()
 
@@ -65,6 +67,7 @@ Proposta de criação de um middleware que faça a interface entre os microservi
 
 * URI: `api.tenant.com/cadastro/dividas`
  * Authorization : `your token`
+ * Content-type : `application/json`
  * Verbo: `POST`
  * Payload da requisição : [disponivel aqui]()
    
