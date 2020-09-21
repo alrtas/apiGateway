@@ -49,32 +49,61 @@ Proposta de criação de um middleware que faça a interface entre os microservi
   
 ## Endpoints & Payloads de entrada
 
-* URI: `api.tenant.com/cadastro/geral`
+ * URI : `api.tenant.com/cadastro/geral`
  * Authorization : `your token`
  * Content-type : `application/json`
- * Verbo: `POST`
- * Payload da requisição : [disponivel aqui]()
+ * Verbo : `POST`
+ * Payload da requisição : [disponivel aqui](https://github.com/alrtas/apiGateway#payload-de-cadastro-geral)
  
  <br />
 
-* URI: `api.tenant.com/cadastro/financeiro`
+ * URI : `api.tenant.com/cadastro/financeiro`
  * Authorization : `your token`
  * Content-type : `application/json`
- * Verbo: `POST`
- * Payload da requisição : [disponivel aqui]()
+ * Verbo : `POST`
+ * Payload da requisição : [disponivel aqui](https://github.com/alrtas/apiGateway#payload-de-cadastro-financeiro)
 
 <br />
 
-* URI: `api.tenant.com/cadastro/dividas`
+ * URI : `api.tenant.com/cadastro/dividas`
  * Authorization : `your token`
  * Content-type : `application/json`
- * Verbo: `POST`
+ * Verbo : `POST`
+ * Payload da requisição : [disponivel aqui](https://github.com/alrtas/apiGateway#payload-de-cadastro-de-dividas)
+   
+<br />
+
+ * URI : `api.tenant.com/cadastro/transacoes`
+ * Authorization : `your token`
+ * Content-type : `application/json`
+ * Verbo : `POST`
  * Payload da requisição : [disponivel aqui]()
    
 <br />
   
 ## Endpoints & Payloads de saida
 
+ * URI : `api.tenant.com/baseA/dadosGerais`
+ * Authorization : `your token`
+ * Content-type : `application/json`
+ * Verbo : `GET`
+ * Payload da requisição : [disponivel aqui]()
+ 
+ <br />
+ 
+ * URI : `api.tenant.com/baseB/dadosScore`
+ * Authorization : `your token`
+ * Content-type : `application/json`
+ * Verbo : `GET`
+ * Payload da requisição : [disponivel aqui]()
+ 
+ <br />
+ 
+ * URI : `api.tenant.com/baseC/transacoes`
+ * Authorization : `your token`
+ * Content-type : `application/json`
+ * Verbo : `GET`
+ * Payload da requisição : [disponivel aqui]()
 
 ## Um pouco da lógica
 
@@ -172,3 +201,4 @@ Segue abaixo um video da plataforma WSO2.
 		]
 	}
     }
+### Payload de cadastro de transações
