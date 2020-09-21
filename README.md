@@ -142,7 +142,7 @@ O código está dividido em dois grandes pedaços:
  * HTTP Status : `200 OK`
  * Content-type : `application/json`
  * Verbo : `GET`
- * Payload da requisição : [disponivel aqui]()
+ * Payload da requisição : [disponivel aqui](https://github.com/alrtas/apiGateway#payload-da-base-a-dados-gerais)
  
  <br />
  
@@ -151,7 +151,7 @@ O código está dividido em dois grandes pedaços:
  * HTTP Status : `200 OK`
  * Content-type : `application/json`
  * Verbo : `GET`
- * Payload da requisição : [disponivel aqui]()
+ * Payload da requisição : [disponivel aqui](https://github.com/alrtas/apiGateway#payload-da-base-b-dados-financeiros)
  
  <br />
  
@@ -160,7 +160,7 @@ O código está dividido em dois grandes pedaços:
  * HTTP Status : `200 OK`
  * Content-type : `application/json`
  * Verbo : `GET`
- * Payload da requisição : [disponivel aqui]()
+ * Payload da requisição : [disponivel aqui](https://github.com/alrtas/apiGateway#payload-da-base-c-dados-transacionais)
 
 
 ## Outra ideia de solução
