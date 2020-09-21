@@ -9,9 +9,8 @@ segurança em TI. Afinal, nosso principal ativo são dados sensíveis dos consum
 
 * [Solução/arquitetura proposta](https://github.com/alrtas/apiGateway/blob/master/README.md#solu%C3%A7%C3%A3oarquitetura-proposta)
 * [Tecnologias propostas](https://github.com/alrtas/apiGateway#tecnologias-propostas)
-* [Endpoints]()
-* [Payloads na requisição]()
-* [Payloads de resposta]()
+* [Endpoints & Payloads de entrada]
+* [Endpoints & Payloads de saida]
 * [Um pouco da lógica]()
 * [Outra ideia de solução](https://github.com/alrtas/apiGateway#outra-ideia-de-solu%C3%A7%C3%A3o)
 
@@ -48,7 +47,34 @@ Proposta de criação de um middleware que faça a interface entre os microservi
   * Garantir privacidade e versionamento [GitLab](https://about.gitlab.com/)
   * Garantir disponibilidade, Dockers na [AWS](https://aws.amazon.com/pt/products/?nc2=h_ql_prod_fs_f)
   
+## Endpoints & Payloads de entrada
+
+* URI: `api.tenant.com/cadastro/geral`
+ * Authorization : `your token`
+ * Verbo: `POST`
+ * Payload da requisição : [disponivel aqui]()
+ 
+ <br />
+
+* URI: `api.tenant.com/cadastro/financeiro`
+ * Authorization : `your token`
+ * Verbo: `POST`
+ * Payload da requisição : [disponivel aqui]()
+
+<br />
+
+* URI: `api.tenant.com/cadastro/dividas`
+ * Authorization : `your token`
+ * Verbo: `POST`
+ * Payload da requisição : [disponivel aqui]()
+   
+<br />
   
+## Endpoints & Payloads de saida
+
+
+## Um pouco da lógica
+
 ## Outra ideia de solução
 ![](https://github.com/alrtas/apiGateway/blob/master/Utils/Imagens/wso2_enterprise_integrator.PNG)
 
@@ -57,4 +83,89 @@ Outra alternativa é utilizar o [WSO2](https://wso2.com/integration/) como API M
 
 Segue abaixo um video da plataforma WSO2.
 [LINK](https://www.youtube.com/watch?v=hs_FLM5a6Ck&list=PLp0TUr0bmhX6PMqphqe6dJiap3B5KpLyi&ab_channel=WSO2)
+
+
+
+### Payload de cadastro geral
+    {
+	"resource":{
+		"nome":"Thiago Alberto da silva",
+		"cpf":"09489601918",
+		"telefoneCelular":"48996260373",
+		"telefoneResidencial":"4833745517",
+		"email":"alrrtas@gmail.com",
+		"emailsecundario":"thiagos.tas@gmail.com",
+		"nascimento":"16/08/1997",
+		"sexo" : "masculino",
+		"estadoCivil" : "solteiro",
+		"enderecos": [
+						{
+							"tipo":"residencial"
+							"endereco": "Rua Arcanjo Cunha",
+							"bairro": "Rio Grande",
+							"cidade": "Palhoça",
+							"numero": 56,
+							"referencia" : "ao lado da padaria",
+							"uf": "SC",
+							"cep": "88131700",
+							"ibge": "4211900"
+						}
+					]
+	}
+    }
  
+### Payload de cadastro financeiro
+    {
+	"resource": {
+		"cpf": "09489601918",
+		"rendaMensal" : "6000.00"
+		"profissao" : "analista de sistemas",
+		"patrimonio" : "150000.00",
+		"quantidadeDeBens" : "3",
+		"bens" : [
+					{
+						"tipo":"imovel",
+						"estado" : "pago",
+						"valor" : "100000.00"
+					},
+					{
+						"tipo":"automovel",
+						"estado":"financiado"
+						"valor":"50000.00",
+						"pago" : "25000.00",
+						"debitos" : "25000.00"
+					},
+					{
+						"tipo": "investimento",
+						"valor" : "25000.00"
+					}
+					
+		]
+	}
+    }
+### Payload de cadastro de dividas
+    {
+	"resource": {
+		"cpf": "09489601918",
+		"quantidadeDeDividas":"3",
+		"dividasEmAtraso":"1",
+		"valorTotalDevido":"25000.00",
+		"dividas" : [
+						{
+							"tipo":"financiamento",
+							"valor":"10000.00",
+							"status": "em dia"
+						},
+						{
+							"tipo":"cartao",
+							"valor":"5000.00",
+							"status": "atrasado"
+						},
+						{
+							"tipo":"financiamento",
+							"valor":"10000.00",
+							"status": "em dia"
+						}
+		]
+	}
+    }
