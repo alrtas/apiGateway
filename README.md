@@ -139,6 +139,7 @@ O código está dividido em dois grandes pedaços:
 
  * URI : `api.tenant.com/baseA/dadosGerais`
  * Authorization : `your token`
+ * HTTP Status : `200 OK`
  * Content-type : `application/json`
  * Verbo : `GET`
  * Payload da requisição : [disponivel aqui]()
@@ -147,6 +148,7 @@ O código está dividido em dois grandes pedaços:
  
  * URI : `api.tenant.com/baseB/dadosScore`
  * Authorization : `your token`
+ * HTTP Status : `200 OK`
  * Content-type : `application/json`
  * Verbo : `GET`
  * Payload da requisição : [disponivel aqui]()
@@ -155,6 +157,7 @@ O código está dividido em dois grandes pedaços:
  
  * URI : `api.tenant.com/baseC/transacoes`
  * Authorization : `your token`
+ * HTTP Status : `200 OK`
  * Content-type : `application/json`
  * Verbo : `GET`
  * Payload da requisição : [disponivel aqui]()
@@ -279,3 +282,132 @@ Segue abaixo um video da plataforma WSO2.
 					}
 				]
     }
+
+
+### Payload da BASE A, dados gerais.
+    {
+	"resource":{
+		"nome":"Thiago Alberto da silva",
+		"cpf":"09489601918",
+		"enderecos": [
+						{
+							"tipo":"residencial"
+							"endereco": "Rua Arcanjo Cunha",
+							"bairro": "Rio Grande",
+							"cidade": "Palhoça",
+							"numero": 56,
+							"referencia" : "ao lado da padaria",
+							"uf": "SC",
+							"cep": "88131700",
+							"ibge": "4211900"
+						}
+					],
+		"dividas" : [
+						{
+							"tipo":"financiamento",
+							"valor":"10000.00",
+							"status": "em dia"
+						},
+						{
+							"tipo":"cartao",
+							"valor":"5000.00",
+							"status": "atrasado"
+						},
+						{
+							"tipo":"financiamento",
+							"valor":"10000.00",
+							"status": "em dia"
+						}
+		]
+	}
+    }
+    
+ ### Payload da BASE B, dados financeiros.
+     {
+	"resource":{
+		"nome":"Thiago Alberto da silva",
+		"cpf":"09489601918",
+		"idade":"23",
+		"sexo" : "masculino",
+		"rendaMensal" : "6000.00"
+		"profissao" : "analista de sistemas",
+		"patrimonio" : "150000.00",
+		"quantidadeDeBens" : "3",
+		"enderecos": [
+						{
+							"tipo":"residencial"
+							"endereco": "Rua Arcanjo Cunha",
+							"bairro": "Rio Grande",
+							"cidade": "Palhoça",
+							"numero": 56,
+							"referencia" : "ao lado da padaria",
+							"uf": "SC",
+							"cep": "88131700",
+							"ibge": "4211900"
+						}
+					],
+		"bens" : [
+					{
+						"tipo":"imovel",
+						"estado" : "pago",
+						"valor" : "100000.00"
+					},
+					{
+						"tipo":"automovel",
+						"estado":"financiado"
+						"valor":"50000.00",
+						"pago" : "25000.00",
+						"debitos" : "25000.00"
+					},
+					{
+						"tipo": "investimento",
+						"valor" : "25000.00"
+					}
+		]
+	}
+	}
+ 
+ 
+ ### Payload da BASE C, dados transacionais.
+ 
+     {
+	"resource" :{
+			"cpf" : "09489601918",
+			"ultimaConsulta" : "23/10/2015",
+			"instituicao" : "serasa",
+			"movimentacao" :[
+								{
+									"tipo" : "transferencia"
+									"instituicaoOrigem" : "nubank",
+									"instituicaoDestino" : "banco do brasil",
+									"valor" : "700.00",
+									"transactionID" : "pqmagzpq1111-dasda1124344"
+								},
+								{
+									"tipo" : "emprestimo"
+									"instituicao" : "banco do brasil",
+									"prazo" : "36
+									"valor" : "700.00",
+									"transactionID" : "pqmagzpq1111-dasda1124344"
+								},
+								{
+									"tipo" : "pagamento boelto"
+									"instituicaoOrigem" : "nubank",
+									"instituicaoDestino" : "banco do brasil",
+									"valor" : "700.00",
+									"transactionID" : "pqmagzpq1111-dasda1124344"
+								}
+
+			]
+			"ultimaCompraCartao": [
+									{
+										"tipo" : "cartao de credito",
+										"instituicao" : "nubank",
+										"bandeira" : "mastercard",
+										"valor" : "199.99",
+										"loja" : "renner SA",
+										"transactionID" : "asijdasis-0121nyas"
+									}
+			]
+		}
+	}
