@@ -5,6 +5,30 @@ Aqui trabalhamos constantemente com grande volume e complexidade de dados. Saben
 precisamos que você elabore uma solução que ofereça **armazenamento, processamento e disponibilização** desses dados, sempre considerando que tudo deve estar conforme as boas práticas de
 segurança em TI. Afinal, nosso principal ativo são dados sensíveis dos consumidores brasileiros.
 
+Cada uma das bases existentes, são acessadas por sistemas em duas diferentes arquiteturas: microserviços e nano-serviços. Vale salientar que essas bases de dados são externas, portanto não é
+necessário dissertar sobre suas implementações, apenas suas consumações. Quantos aos payloads
+retornados por esses recursos, o candidato pode usar sua criatividade e definí-los, imaginando quais
+dados seriam importantes de serem retornados por sistemas como esses.<br />
+O primeiro sistema, acessa os seguintes dados da Base A:
+* CPF
+* Nome
+* Endereço
+* Lista de dívidas <br />
+
+
+O segundo, acessa a Base B que contém dados para cálculo do ***** de *****. O ***** de ***** é um rating utilizado por instituições de crédito (bancos, imobiliárias, etc) quando precisam analisar o risco envolvido em uma operação de crédito a uma entidade.
+* Idade
+* Lista de bens (Imóveis, etc)
+* Endereço
+* Fonte de renda <br />
+
+
+O último serviço, acessa a Base C e tem como principal funcionalidade, rastrear eventos relacionados a um determinado CPF.
+* Última consulta do CPF em um Bureau de crédito (Serasa e outros).
+* Movimentação financeira nesse CPF.
+* Dados relacionados a última compra com cartao de crédito vinculado ao CPF.<br />
+
+
 ## Indice
 
 * [Solução/arquitetura proposta](https://github.com/alrtas/apiGateway/blob/master/README.md#solu%C3%A7%C3%A3oarquitetura-proposta)
@@ -46,6 +70,36 @@ Proposta de criação de um middleware que faça a interface entre os microservi
   * Garantir CI/CD [Jenkins](https://www.jenkins.io/)
   * Garantir privacidade e versionamento [GitLab](https://about.gitlab.com/)
   * Garantir disponibilidade, Dockers na [AWS](https://aws.amazon.com/pt/products/?nc2=h_ql_prod_fs_f)
+* Segurança
+	* [OAUTH 2.0](https://oauth.net/2/)
+	* [HTTPS](https://tools.ietf.org/html/rfc2660)
+	* [VPC](https://aws.amazon.com/pt/vpc/)
+	
+
+## Um pouco da lógica
+
+O Middleware ou API Gateway ou API Manager foi construido utilizando o padrão de arquitetura de software [MVC](https://pt.wikipedia.org/wiki/MVC), onde temos implementado os 3 modulos
+* Controller
+	* Responsavel por subir o `endereçamento e portas` do servidor.
+	* Responsavel por controlar toda a parte de `rotas de URIs` do sistema.
+	* Responsavel por realizar a implantação das `regras de negócio` no sistema.
+* Model
+	* Responsavel por toda e qualquer alteração em qualquer base de dados utilizada pelo sistema, deverá ser somente acessada pelo `CONTROLLER`
+	* Responsavel por `incluir` os dados dentro das bases de dados especificadas
+	* Responsavel por `coletar` os dados dentro das bases de dados especificadas
+* View
+	* Responsavel por apresentar visualmente o resultado, neste caso via JSON.
+<br />
+
+O código está dividido em dois grandes pedaços:
+* Processamento e inclusão de dados nas bases de dados de acordo com as regras de negócio.
+	* Para URIs `api.tenant.com/cadastro/xxxx` é feito o seguinte fluxo.
+  		* Validação da rota e encaminhamento para arquivo de `controller` desta rota > `validação dos dados` e da `regra de negócio` > encaminhamento para arquivo de `model` respectivo > inclusão na base de dados
+* Coleta e disponbilização dos dados já salvos nas bases de dados de acordo com as regras de negócio.
+
+
+
+
   
 ## Endpoints & Payloads de entrada
 
@@ -105,7 +159,6 @@ Proposta de criação de um middleware que faça a interface entre os microservi
  * Verbo : `GET`
  * Payload da requisição : [disponivel aqui]()
 
-## Um pouco da lógica
 
 ## Outra ideia de solução
 ![](https://github.com/alrtas/apiGateway/blob/master/Utils/Imagens/wso2_enterprise_integrator.PNG)
@@ -202,3 +255,27 @@ Segue abaixo um video da plataforma WSO2.
 	}
     }
 ### Payload de cadastro de transações
+
+    {
+	"resource" : 
+	
+		"cpf" : "09489601918",
+		"qtditems" : 2
+		"items : [
+					{
+						"tipo" : "cartao de credito",
+						"instituicao" : "nubank",
+						"bandeira" : "mastercard",
+						"valor" : "199.99",
+						"loja" : "renner SA",
+						"transactionID" : "asijdasis-0121nyas"
+					},
+					{
+						"tipo" : "transferencia"
+						"instituicaoOrigem" : "nubank",
+						"instituicaoDestino" : "banco do brasil",
+						"valor" : "700.00",
+						"transactionID" : "pqmagzpq1111-dasda1124344"
+					}
+				]
+    }
