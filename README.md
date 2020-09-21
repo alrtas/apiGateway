@@ -7,13 +7,13 @@ segurança em TI. Afinal, nosso principal ativo são dados sensíveis dos consum
 
 ## Indice
 
-* [Solução/arquitetura proposta]()
-* [Tecnologias propostas]()
+* [Solução/arquitetura proposta](https://github.com/alrtas/apiGateway/blob/master/README.md#solu%C3%A7%C3%A3oarquitetura-proposta)
+* [Tecnologias propostas](https://github.com/alrtas/apiGateway#tecnologias-propostas)
 * [Endpoints]()
 * [Payloads na requisição]()
 * [Payloads de resposta]()
 * [Um pouco da lógica]()
-* [Outra ideia de solução]()
+* [Outra ideia de solução](https://github.com/alrtas/apiGateway#outra-ideia-de-solu%C3%A7%C3%A3o)
 
 
 # Solução/arquitetura proposta
