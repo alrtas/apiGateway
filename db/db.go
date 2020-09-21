@@ -9,8 +9,6 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 	//Documentação: https://github.com/go-sql-driver/mysql
 	"github.com/go-redis/redis"
-	_ "github.com/go-redis/redis/v8"
-
 	//Documentação: https://github.com/go-redis/redis
 	_ "github.com/elastic/go-elasticsearch/v7"
 	//Documentação: https://github.com/elastic/go-elasticsearch
