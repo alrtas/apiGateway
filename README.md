@@ -71,7 +71,7 @@ Proposta de criação de um middleware que faça a interface entre os microservi
   * Garantir privacidade e versionamento [GitLab](https://about.gitlab.com/)
   * Garantir disponibilidade, Dockers na [AWS](https://aws.amazon.com/pt/products/?nc2=h_ql_prod_fs_f)
 * Segurança
-	* [OAUTH 2.0](https://oauth.net/2/)
+	* [JWT](https://jwt.io/)
 	* [HTTPS](https://tools.ietf.org/html/rfc2660)
 	* [VPC](https://aws.amazon.com/pt/vpc/)
 	
